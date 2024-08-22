@@ -1,9 +1,8 @@
 
 
 .App {
-  /* padding: 20px; */
-  /* background-color: blue; */
   height: 100vh;
+  background-color: #002043;
 }
 
 .main-page-cont {
@@ -12,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #002043;
+  background: linear-gradient(65deg, #002043 20%, #203c5b 40%, #002043 70%)
 }
 
 .movie-list {
@@ -22,7 +21,7 @@
   height: 53%;
   padding: 1.5% 1.5%;
   border: solid #bf5709 5px;
-  background-color: #054645;
+  background-color: #112020;
   border-radius: 5px;
   grid-auto-flow: column;
   grid-auto-columns: 15%;

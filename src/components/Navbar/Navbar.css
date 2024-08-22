@@ -1,9 +1,16 @@
 .navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     padding: 20px;
     background-color: #0352f0;
     img {
         width: 90px;
         border-radius: 50%;
         cursor: pointer;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
     }
 }

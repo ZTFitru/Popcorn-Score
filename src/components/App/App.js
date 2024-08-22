@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 import Navbar from '../Navbar/Navbar';
 import movieData from '../../Data/Data';
 
@@ -19,8 +19,10 @@ function App() {
   return (
     <main className="App">
       <Navbar />
-      <h2>Popcorn Score</h2>
+      {/* <h2>Popcorn Score</h2> */}
         <section className="main-page-cont">
+          {/* we'll have the random display here somewhere.... */}
+          {/* we'll have the search functionality here somewhere.... */}
           <div className='movie-list'>
             {movieList.map((movie, index) => {
               return <div className='movie' key={index}>
@@ -33,6 +35,6 @@ function App() {
         </section>
     </main>
   );
-}
+};
 
 export default App;
