@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./MovieDisplay.css";
 
 function MovieDisplay() {
   const [apiMovies, setApiMovies] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos')
@@ -12,11 +13,15 @@ function MovieDisplay() {
   },[])
 
   return(
-    <section className="movie-carosel">
-      <div>
-        <iframe src={`https://www.youtube.com/embed/${apiMovies.id}`} height='200' width='300'></iframe>
-      </div>
-    </section>
+    <div>
+      {error && <p>{error}</p>}
+      <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
+    </div>
+    // <section className="movie-carosel">
+    //   <div>
+    //   <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
+    //   </div>
+    // </section>
   );
 };
 
