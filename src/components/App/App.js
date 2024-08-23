@@ -1,15 +1,25 @@
 import './App.css';
 import Navbar from '../Navbar/Navbar';
-import movieData from '../../Data/Data';
+// import movieData from '../../Data/Data';
 import Footer from '../Footer/Footer';
 import MovieDetails from '../MovieDetails/MovieDetails';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   const [userMovie, setUserMovie] = useState(null)
+  const [apiMovies, setApiMovies] = useState([])
+  const [error, setError] = useState('')
 
-  const movieList = movieData.movies
+
+  useEffect(() => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => setApiMovies(data.movies))
+    .catch(error => setError('Sorry but our server is down!', error))
+  },[])
+
+  // const movieList = movieData.movies
   const dummyData = {
     'movie': {
       id: 1,
@@ -44,6 +54,7 @@ function App() {
           -> 'userMovie' is passed as a PROP to 'MovieDetails'
           -> but if nothing happens or the page loads the <section> is rendered
       */}
+      {error && <p>{error}</p>}
       {userMovie ? (
         // The 'goBack' is passed as a PROP to 'MovieDetails' 
         // the function 'homePageView' to clear the selection to go back to the main page
@@ -51,9 +62,9 @@ function App() {
         <MovieDetails movieInfo={userMovie} goBack={homePageView}/>
       ) : <section className="main-page-cont">
           <div className='movie-list'>
-            {movieList.map((movie, index) => {
+            {apiMovies.map((movie) => {
               // The 'key' is a unique identifier 
-              return <div className='movie' key={index}>
+              return <div className='movie' key={movie.id}>
                 <img src={movie.poster_path} alt={`Poster of the movie ${movie.title}`} onClick={() => userMovieSelection(movie)} />
                 <p>{movie.title}</p>
                 <p>⭐️ {movie.average_rating.toFixed(1)}</p>

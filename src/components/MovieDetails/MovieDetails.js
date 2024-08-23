@@ -2,7 +2,7 @@ import './MovieDetails.css'
 import backArrow from '../../assets/backArrow.png'
 
 const MovieDetails = ({movieInfo, goBack}) => {
-  console.log(movieInfo)
+  // console.log(movieInfo)
 
   const movieFacts = movieInfo.movie
   // This converts the data to include commas
