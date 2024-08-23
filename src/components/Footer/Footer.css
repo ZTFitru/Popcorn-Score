@@ -8,15 +8,13 @@
 
 .footer-info {
     ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(max-content), 1fr);
-        gap: 1rem;
-        padding: 0;
-        margin: 0;
+        display: flex;
+        gap: 20px;
         list-style: none;
     }
     li {
         color: white;
+        cursor: pointer;
     }
 }
 
