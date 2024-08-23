@@ -1,8 +1,13 @@
 import './MovieDetails.css'
 import backArrow from '../../assets/backArrow.png'
+import { useState, useEffect } from 'react'
 
 const MovieDetails = ({movieInfo, goBack}) => {
   // console.log(movieInfo)
+  const [apiMovies, setApiMovies] = useState([])
+  console.log('this api: ', apiMovies)
+  const [error, setError] = useState('')
+
 
   const movieFacts = movieInfo.movie
   // This converts the data to include commas
@@ -10,9 +15,19 @@ const MovieDetails = ({movieInfo, goBack}) => {
     return Number(num).toLocaleString()
   }
 
+  
+
+  useEffect(() => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos')
+    .then(response => response.json())
+    .then(data => setApiMovies(data.videos))
+    .catch(error => setError('Sorry but our server is down!', error))
+  },[])
+
   return (
     <div className='movie-container' >
       <img src={backArrow} alt='' onClick={goBack}/>
+      {error && <p>{error}</p>}
       <div className='movie'>
         <img src={movieFacts.poster_path} alt='' />
       </div>
@@ -26,10 +41,11 @@ const MovieDetails = ({movieInfo, goBack}) => {
         <p><span>Revenue: </span>${newFormatedNum(movieFacts.revenue)}</p>
         <p><span>Runtime: </span>{movieFacts.runtime} Minutes</p>
         <p><span>Tagline: </span>{movieFacts.tagling}</p>
+        <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
       </div>
-      
-      {/* <iframe src='https://www.youtube.com/embed' height='200' width='300' title=''>
-      </iframe> */}
+      {/* <div>
+        <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
+      </div> */}
     </div>
   )
 }

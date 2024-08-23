@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from '../Navbar/Navbar';
-// import movieData from '../../Data/Data';
+import movieData from '../../Data/Data';
 import Footer from '../Footer/Footer';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import { useEffect, useState } from 'react';
@@ -19,7 +19,7 @@ function App() {
     .catch(error => setError('Sorry but our server is down!', error))
   },[])
 
-  // const movieList = movieData.movies
+  const movieList = movieData.movies
   const dummyData = {
     'movie': {
       id: 1,
@@ -37,7 +37,7 @@ function App() {
     }
   }
 
-  const userMovieSelection = (movie) => {
+  const userMovieSelection = () => {
     setUserMovie(dummyData)
   }
 
