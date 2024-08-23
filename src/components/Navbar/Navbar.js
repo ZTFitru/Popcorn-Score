@@ -5,6 +5,10 @@ const Navbar = () => {
 
     return (
         <div className='navbar'>
+            {/* We will use this logo for the user to go back to home page.
+                onClick will be needed
+                use route for the home page with (/)
+            */}
             <img src={logo} alt={`Website logo`} />
             <h1>POPCORN SCORE</h1>
         </div>
