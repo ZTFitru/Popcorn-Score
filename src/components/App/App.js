@@ -63,8 +63,8 @@ function App() {
       ) : <section className="main-page-cont">
         {/* This might be a good spot for a coursel or how ever you spell it */}
         <div className='search-input'>
-          <input type='text' placeholder='Search' />
-          <button>Search</button>
+          <input type='text' className='input-search' placeholder='Search Movie...' />
+          <button className='search-btn'>Search</button>
         </div>
           <div className='movie-list'>
             {apiMovies.map((movie) => {

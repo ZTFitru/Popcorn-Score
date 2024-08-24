@@ -17,11 +17,6 @@ function MovieDisplay() {
       {error && <p>{error}</p>}
       <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='100%' width='90%' title="Black Adam Featurette"></iframe>
     </div>
-    // <section className="movie-carosel">
-    //   <div>
-    //   <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
-    //   </div>
-    // </section>
   );
 };
 
