@@ -7,6 +7,7 @@
   width: 99.9%;
   height: 99%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(55deg, #002043 10%, #203c5b 20%, #002043 35%, #002043 40%, #203c5b 55%, #002043 75%, #203c5b 95%)
@@ -34,6 +35,7 @@
   justify-content: center;
   align-items: center;
   width: 75%;
+  width: 150px;
   height: 80%;
   img {
     width: 100%;

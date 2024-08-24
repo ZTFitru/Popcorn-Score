@@ -61,6 +61,11 @@ function App() {
         // In the 'MovieDetails' page when the click happens the function is invoked to set it to null
         <MovieDetails movieInfo={userMovie} goBack={homePageView}/>
       ) : <section className="main-page-cont">
+        {/* This might be a good spot for a coursel or how ever you spell it */}
+        <div className='search-input'>
+          <input type='text' placeholder='Search' />
+          <button>Search</button>
+        </div>
           <div className='movie-list'>
             {apiMovies.map((movie) => {
               // The 'key' is a unique identifier 

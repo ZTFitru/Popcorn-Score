@@ -13,9 +13,9 @@ function MovieDisplay() {
   },[])
 
   return(
-    <div>
+    <div className="trailer">
       {error && <p>{error}</p>}
-      <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='90%' width='90%' title="Black Adam Featurette"></iframe>
+      <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='100%' width='90%' title="Black Adam Featurette"></iframe>
     </div>
     // <section className="movie-carosel">
     //   <div>
