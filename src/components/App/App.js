@@ -48,7 +48,7 @@ function App() {
   
   return (
     <main className="App">
-      <Navbar />
+      <Navbar goBack={homePageView}/>
       {/* The way we are using the operator '?'
           -> if the user selects a movie render 'userMovie'
           -> 'userMovie' is passed as a PROP to 'MovieDetails'
