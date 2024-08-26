@@ -15,7 +15,17 @@ function MovieDisplay() {
   return(
     <div className="trailer">
       {error && <p>{error}</p>}
-      <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='100%' width='90%' title="Black Adam Featurette"></iframe>
+      {/* <iframe src={`https://www.youtube.com/embed/${apiMovies.key}`} height='400' width='500' title="Black Adam Featurette"></iframe> */}
+      {apiMovies.length > 0 ? (
+        apiMovies.map((movie) => (
+          <div className="movie-video" key={movie.id} >
+            <h3>{movie.type}</h3>
+            <iframe src={`https://www.youtube.com/embed/${movie.key}`} height='400' width='500' title="Black Adam Featurette"></iframe>
+          </div>
+        ))
+      ) : (
+        <p>We aint got no videos</p>
+      )}
     </div>
   );
 };

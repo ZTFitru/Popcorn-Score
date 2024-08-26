@@ -29,7 +29,7 @@ const MovieDetails = ({movieInfo, goBack}) => {
       style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original//${apiMovie.backdrop_path})`}}
     >
       <div className='movie-wrap'>
-        <img src={backArrow} alt='' onClick={goBack} className='back-arrow'/>
+        {/* <img src={backArrow} alt='' onClick={goBack} className='back-arrow'/> */}
         <div className='movies'>
           <img src={apiMovie.poster_path} alt='' />
         </div>
@@ -51,7 +51,7 @@ const MovieDetails = ({movieInfo, goBack}) => {
           <p><span>Budget: </span>${newFormatedNum(apiMovie.budget)}</p>
           <p><span>Revenue: </span>${newFormatedNum(apiMovie.revenue)}</p>
           <p><span>Runtime: </span>{apiMovie.runtime} Minutes</p>
-          <p><span>Tagline: </span>{apiMovie.tagling}</p>
+          <p><span>Tagline: </span>{apiMovie.tagline}</p>
         <MovieDisplay />
       </div>
       </div>

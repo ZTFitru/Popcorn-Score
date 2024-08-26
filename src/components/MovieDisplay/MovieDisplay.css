@@ -1,6 +1,33 @@
 .trailer {
-    height: 40vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 20%;
+    padding: 1.5% 1.5%;
+    border: solid #bf5709 5px;
+    /* box-sizing: border-box; */
+  /* background-color: #112020; */
+    background: linear-gradient(185deg, #112020 25%, #2d3838 50%, #112020 75%);
+    border-radius: 5px;
+    grid-auto-flow: column;
+    grid-auto-columns: 15%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.movie-video {
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    width: 150px;
+    height: 80%;
+    iframe {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        cursor: pointer;
+    }
 }
