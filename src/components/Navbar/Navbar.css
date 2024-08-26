@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    /* background-color: #023396; */
+    background: linear-gradient(120deg, #023396 15%, #022978 35%, #023396 70%, #022978 90%);
+    img {
+        width: 90px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+    }
+}
