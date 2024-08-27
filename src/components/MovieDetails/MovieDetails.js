@@ -29,7 +29,7 @@ const MovieDetails = () => {
         <div className='movies'>
           <img src={apiMovie.poster_path} alt='' />
         </div>
-        <div className='moive-details'>
+        <div className='movie-details'>
           <h2>{apiMovie.title}</h2>
           <p><span>Rating: </span>{apiMovie.average_rating}</p>
           <p><span>Overview: </span>{apiMovie.overview}</p>
