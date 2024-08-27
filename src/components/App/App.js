@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import MovieDetails from '../MovieDetails/MovieDetails';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieDisplay from '../MovieDisplay/MovieDisplay';
 import Title from '../Title/Title';
 

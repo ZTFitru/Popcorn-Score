@@ -1,6 +1,7 @@
 .trailer {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 65%;
     height: 30%;
