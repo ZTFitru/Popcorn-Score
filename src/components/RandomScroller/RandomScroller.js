@@ -1,9 +1,12 @@
 import "./RandomScroller.css";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import movieData from "../../Data/Data.js";
 
 function RandomScroller() {
   // console.log(movieData)
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const randomList = []
   
@@ -20,10 +23,15 @@ function RandomScroller() {
     // console.log('Yo!')
     let result = getRandomMember(movieData.movies);
     // console.log(result, '<-- THERE')
-    randomList.push(result)
+    if(randomList.includes(result)) {
+      let result2 = getRandomMember(movieData.movies);
+      randomList.push(result2)
+    } else {
+      randomList.push(result)
+    }
   }
 
-  // console.log(randomList, '<-- HERE')
+  // console.log(randomList[0], '<-- HERE')
   
   // a random function that will pick random movies from the api movies 
   // copy the api fetch from the title and paste here 
@@ -42,26 +50,39 @@ function getRandomMember(array2) {
 
   return(
     // <section className="random-carousel">
-    
     //   /* some stuff... */
     // </section>
-    <div className='container'>
-        <div >
-            <img src={randomList[0].poster_path} alt='will be a movie...' className='random-movie'/>
-       </div>
-        <div >
-            <img src={randomList[1].poster_path} alt='will be a movie...' className='random-movie'/>    
-        </div>
-        <div >
-            <img src={randomList[2].poster_path} alt='will be a movie...' className='random-movie'/>
-        </div>
-        <div >
-            <img src={randomList[3].poster_path} alt='will be a movie...' className='random-movie'/>
-        </div>
-        <div >
-            <img src={randomList[4].poster_path} alt='will be a movie...' className='random-movie'/>
-        </div>
+
+    <div className="outer-container">
+      <div className="container">
+        {randomList.map((movie, index) => {
+          return (<img src={movie.poster_path} alt={movie.title} key={index} className={currentIndex === index ? "currentIndex" : "currentIndex currentIndex-hidden"} />)
+        })}
+      </div>
+      <span className="movie-index-dots">
+        {randomList.map((_, index) => {
+          return <button key={index} onClick={() => setCurrentIndex(index)} className={currentIndex === index ? "index-dot" : "index-dot index-dot-inactive"} >*</button>
+        })}
+      </span>
     </div>
+
+    // <div className='container'>
+    //     <div >
+    //         <img src={randomList[0].poster_path} alt={randomList[0].title} className='random-movie'/>
+    //    </div>
+    //     <div >
+    //         <img src={randomList[1].poster_path} alt={randomList[1].title} className='random-movie'/>    
+    //     </div>
+    //     <div >
+    //         <img src={randomList[2].poster_path} alt={randomList[2].title} className='random-movie'/>
+    //     </div>
+    //     <div >
+    //         <img src={randomList[3].poster_path} alt={randomList[3].title} className='random-movie'/>
+    //     </div>
+    //     <div >
+    //         <img src={randomList[4].poster_path} alt={randomList[4].title} className='random-movie'/>
+    //     </div>
+    // </div>
   );
 };
 
