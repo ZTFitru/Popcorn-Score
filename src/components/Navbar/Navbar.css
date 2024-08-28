@@ -12,13 +12,16 @@
         border-radius: 50%;
         cursor: pointer;
         position: absolute;
-        animation-name: logoPic 4s ease-out;
+        animation-name: logoPic;
+        animation-duration: 4s;
     }
     h1 {
         font-size: 30px;
         font-weight: 700;
         color: white;
         padding-left: 90px;
+        animation-name: logoPic;
+        animation-duration: 4s;
     }
 }
 
