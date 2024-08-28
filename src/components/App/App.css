@@ -5,7 +5,7 @@
 
 .main-page-cont {
   width: 99.9%;
-  height: 99%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,9 +22,8 @@
 }
 
 .input-search {
-  /* box-shadow: 0px 0px 20px 1px #fff; */
   border: 0;
-  border-radius: 30px 0 0 30px;
+  border-radius: 30px 30px 30px 30px;
   padding: 0 10px 0 10px;
   text-align: center;
   color: black;
@@ -34,23 +33,6 @@
   font-weight: 900;
 }
 
-.search-btn {
-  transition: 0.2s ease-in-out;
-    /* box-shadow:0px 0px 20px 1px #023396 ; */
-    border: 0;
-    border-radius: 0 30px 30px 0;
-    padding: 0 10px 0 10px;
-    text-align: center;
-    color: black;
-    position: relative;
-    background-color: #025dbd;
-    height: 25px;
-    width: 100px;
-    font-size: 20px;
-    font-weight: 1000;
-
-}
-
 .movie-list {
   display: grid;
   align-items: center;
@@ -58,13 +40,15 @@
   height: 53%;
   padding: 1.5% 1.5%;
   border: solid #bf5709 5px;
-  /* background-color: #112020; */
   background: linear-gradient(185deg, #112020 25%, #2d3838 50%, #112020 75%);
   border-radius: 5px;
   grid-auto-flow: column;
   grid-auto-columns: 15%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  p {
+    text-decoration: none;
+  }
 }
 
 .movie {
@@ -83,8 +67,10 @@
   }
   p {
     font-size: 15px;
-    text-wrap: nowrap;
+    text-align: center;
+    text-wrap: pretty;
     color: white;
+    margin: 10px 0 0;
   }
 }
 

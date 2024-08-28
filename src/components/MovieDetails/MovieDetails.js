@@ -6,16 +6,23 @@ const MovieDetails = () => {
 
   const { id } = useParams()
   const [apiMovie, setApiMovie] = useState('')
+  const [error, setError] = useState('')
   const navigate = useNavigate()
 
-  
-  
+
   useEffect(() => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => response.json())
-    .then(data => setApiMovie(data.movie))
-    .catch(err => console.log(err))
-  },[id])
+    const getMovie = async () => {
+        try {
+            const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`);
+            const data = await response.json();
+            setApiMovie(data.movie);
+        } catch (error) {
+            setError('Sorry but our server is down!')
+        }
+    }
+    getMovie();
+
+},[id])
 
   const showVideo = () => {
     navigate(`/movies/${id}/videos`)
@@ -33,7 +40,7 @@ const MovieDetails = () => {
           <h2>{apiMovie.title}</h2>
           <p><span>Rating: </span>{apiMovie.average_rating}</p>
           <p><span>Overview: </span>{apiMovie.overview}</p>
-          <p><span>Overview: </span>{apiMovie.genres}</p>
+          <p><span className='tag'>Genre: </span>{apiMovie.genres}</p>
           <p><span>Release Date: </span>{apiMovie.release_date}</p>
           <p><span>Runtime: </span>{apiMovie.runtime} Minutes</p>
           <p><span>Tagline: </span>{apiMovie.tagline}</p>
