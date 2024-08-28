@@ -1,275 +1,121 @@
-/* .movie-container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
+.back-arrow {
+  background-color: white;
+  /* margin-top: 0px; */
+}
+
+.movie-container{
+display: flex;
+flex-direction: column;
+height: 100vh;
+/* flex-wrap: wrap; */
+justify-content: center;
+align-items: center;
+/* background-image: url(https://image.tmdb.org/t/p/original/7j7IrTHT1pJaVsIJjsGVSNxUPhY.jpg); */
+background-position: center;
+background-size: cover;
+gap: 20px;
+  img {
+    position: absolute;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
 }
 
 .movie-wrap {
-    display: flex;
-    
-    margin-top: 130px;
-    margin-left: 150px;
-    img {
-        width: 300px;
-        height: 400px;
-    }
-} */
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+/* gap: 20px; */
+height: 95vh;
+width: 95vw;
+}
+
+.movies {
+display: flex;
+align-items: center;
+width: 35vw;
+  img {
+    width: 25vw;
+    object-fit: contain;
+  }
+}
+
+.movie-details {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 65vw;
+background: linear-gradient(to bottom, 
+  rgba(0, 0, 0, 0) 5%, 
+  rgba(0, 0, 0, 0.75) 20%,
+  rgba(0, 0, 0, 0.75) 80%,
+  rgba(0, 0, 0, 0) 100%);
+  h2 {
+    margin-left: .6em;
+    color: white
+  };
+  p {
+    text-wrap: balance;
+    margin-left: 1em;
+    color: white
+  };
+  button {
+    width: 30%;
+    height: 5%;
+    margin-left: 30%;
+    border: 0;
+    border-radius: 5px;
+    background-color: #a74c08;
+    cursor: pointer;
+    color: white;
+  };
+  button:hover {
+    transform: skew(-20deg);
+    background-color: #bf5709;
+  };
+}
+
+.tag {
+  border: 1px solid black;
+}
+
 
 /* .movies {
-    position: relative;
-    top: 200px;
-    img {
-        width: 300px;
-        height: 400px;  
-    }
-}
-
-.moive-details {
-    position: relative;
-    top: 100px;
-    h2 {
-        font-weight: 800;
-        color: white;
-    }
-    span {
-        color: white;
-        font-weight: 900;
-    }
-    p {
-        color: white;
-        
-    }
+  flex: 1;
+  position: relative;
+  top: 200px;
+  img {
+      width: 300px;
+      height: 400px;  
+      margin-top: 650px;
+      margin-left: 180px;
+  }
+  
 } */
 
-/* .outer-container {
-    font: 14px/22px "Lato", Arial, sans-serif;
-    color: #A9A8A3;
-    padding: 40px 0;
-  }
-  
-  .inner-container {
-    margin: 0 auto;
-    width: 780px;
-    height: 640px;
-    background: #F0F0ED;
-    border-radius: 5px;
-    position: relative;
-  }
-  
-  .moive-card {
-    height: 342px;  
-    margin:0;
-    position: relative;
-    overflow: hidden;
-    z-index:1;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-      
-  }
-  
-  .movie-main-poster {
-    position: absolute;
-    top: 160px;
-    left: 40px;
-    z-index: 2;
-  }
-  
-  .movie-title {
-    
-    padding: 50px 0 0 280px;
-    
-    
-    .title1 {
+/* .moive-details {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 2;
+  margin-top: 500px;
+  margin-right: 50px;
+  background-color: black;
+  position: relative;
+  top: 100px;
+  right: 350px;
+  h2 {
+      font-weight: 800;
       color: white;
-      font-size: 44px;
-      margin-bottom: 13px;
-      position: relative;
+  }
+  span {
+      color: white;
+      font-weight: 900;
+  }
+  p {
+      color: white;
       
-      span {
-        position: absolute;
-        top: 3px;
-        margin-left: 12px;
-        background: #C4AF3D;
-        border-radius: 5px;
-        color: #544C21;
-        font-size: 14px;
-        padding: 0px 4px;
-        
-      }
-    }
   }
-  
-.description {
-    
-    bottom: 0px;
-    height: 200px;
-    font-size: 16px;
-    line-height: 26px;
-    color: #B1B0AC;
-    
-}
-  
-.column1 {
-    padding-left: 50px;
-    padding-top: 120px;
-    width: 220px;
-    float: left;
-    text-align: center;
-}
-  
-.tag {
-    background: white;
-    border-radius: 10px;
-    padding: 3px 8px;
-    font-size: 14px;
-    margin-right: 4px;
-    line-height: 35px;
-    cursor: pointer;
-}
-  
-.column2 {
-    padding-left: 41px;
-    padding-top: 30px;
-    margin-left: 20px;
-    width: 480px;
-    float: left;
 } */
-  
-  
-/* MovieCard.css */
-
-*, *:before, *:after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: #43423E;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #5C7FB8;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .outer-container {
-    font: 14px/22px "Lato", Arial, sans-serif;
-    color: #A9A8A3;
-    padding: 40px 0;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .inner-container {
-    margin: 0 auto;
-    width: 780px;
-    height: 640px;
-    position: relative;
-  }
-  
-  .movie-main-poster {
-    position: absolute;
-    top: 160px;
-    left: 40px;
-    z-index: 2;
-  }
-  
-  .movie-card {
-    background: #F0F0ED;
-    border-radius: 5px;
-    position: relative;
-    width: 780px;
-    height: 640px;
-    margin: 0 auto;
-  }
-  
-  .hero {
-    height: 342px;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  
-  .cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 30%;
-    height: 100%;
-    object-fit: scale-down;
-  }
-  
-  .details {
-    padding: 190px 0 0 280px;
-  }
-  
-  .title1 {
-    color: black;
-    font-size: 44px;
-    margin-bottom: 13px;
-    position: relative;
-  }
-  
-  .title1 span {
-    position: absolute;
-    top: 3px;
-    margin-left: 12px;
-    background: #C4AF3D;
-    border-radius: 5px;
-    color: #544C21;
-    font-size: 14px;
-    padding: 0px 4px;
-  }
-  
-  .description {
-    height: 200px;
-    font-size: 16px;
-    line-height: 26px;
-    color: #B1B0AC;
-  }
-  
-  .column1 {
-    padding-left: 50px;
-    padding-top: 120px;
-    width: 220px;
-    float: left;
-    text-align: center;
-  }
-  
-  .tag {
-    background: white;
-    border-radius: 10px;
-    padding: 3px 8px;
-    font-size: 14px;
-    margin-right: 4px;
-    line-height: 35px;
-    cursor: pointer;
-  }
-  
-  .tag:hover {
-    background: #ddd;
-  }
-  
-  .column2 {
-    padding-left: 41px;
-    padding-top: 30px;
-    margin-left: 20px;
-    width: 480px;
-    float: left;
-  }
-  
-  
-  
-  

@@ -1,19 +1,21 @@
+.trailer-cont {
+    height: 100vh;
+}
+
 .trailer {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 65%;
-    height: 30%;
+    width: 98%;
+    height: 97%;
     padding: 1% 1%;
-    /* border: solid #bf5709 5px; */
-    /* box-sizing: border-box; */
-  /* background-color: #112020; */
     background: linear-gradient(185deg, #112020 25%, #2d3838 50%, #112020 75%);
-    /* border-radius: 5px; */
     grid-auto-flow: column;
     grid-auto-columns: 15%;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
+    gap: 10px;
 }
 
 .movie-video {

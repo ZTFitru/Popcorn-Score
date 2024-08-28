@@ -65,6 +65,9 @@
   grid-auto-columns: 15%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  p {
+    text-decoration: none;
+  }
 }
 
 .movie {
