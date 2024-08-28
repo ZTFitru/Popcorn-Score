@@ -1,4 +1,5 @@
 import "./RandomScroller.css";
+import { Link, useParams } from "react-router-dom";
 
 function RandomScroller() {
   return(

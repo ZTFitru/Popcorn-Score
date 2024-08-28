@@ -11,36 +11,36 @@ function Title() {
   const [error, setError] = useState('')
 
 
-useEffect(() => {
-    const getMovies = async () => {
-        try {
-            const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies');
-            const data = await response.json();
-            setApiMovies(data.movies);
-        } catch (error) {
-            setError('Sorry but our server is down!')
-        }
-    }
-    getMovies();
+  useEffect(() => {
+      const getMovies = async () => {
+          try {
+              const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies');
+              const data = await response.json();
+              setApiMovies(data.movies);
+          } catch (error) {
+              setError('Sorry but our server is down!')
+          }
+      }
+      getMovies();
 
-},[])
+  },[])
 
-useEffect(() => {
-    if(movieInput) {
-        const result = apiMovies.filter(movie => 
-            movie.title.toLowerCase().includes(movieInput.toLowerCase())
-        )
-        setFilteredMovies(result)
-        setUserType(true) // the movies would'nt come back
-    } else {
-        setFilteredMovies(apiMovies)
-        setUserType(false) // just set to false
-    }
-}, [movieInput, apiMovies])
+  useEffect(() => {
+      if(movieInput) {
+          const result = apiMovies.filter(movie => 
+              movie.title.toLowerCase().includes(movieInput.toLowerCase())
+          )
+          setFilteredMovies(result)
+          setUserType(true) // the movies would'nt come back
+      } else {
+          setFilteredMovies(apiMovies)
+          setUserType(false) // just set to false
+      }
+  }, [movieInput, apiMovies])
 
   
 
-return (
+  return (
     <main className="App">
       {error && <p className='error-message'>{error}</p>}
       <section className="main-page-cont">

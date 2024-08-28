@@ -1,0 +1,6 @@
+.random-carousel {
+  display: flex;
+  flex-direction: row;
+  height: 30%;
+  width: 99.9%;
+}
