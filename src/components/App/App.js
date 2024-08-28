@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/movies:id' element={ <RandomScroller /> } />
+        {/* <Route path='/movies:id' element={ <RandomScroller /> } /> */}
         <Route path='/' element={<Title />}/>
         <Route path='/movies/:id' element={<MovieDetails />}/>
         <Route path='/movies/:movie_id/videos' element={<MovieDisplay />}/>
