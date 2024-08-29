@@ -1,0 +1,36 @@
+{
+    "movies": [
+        {
+            "id": 436281,
+            "poster_path": "https://image.tmdb.org/t/p/original/aBQf2vMiCINeVC9v6BGVYKXurTh.jpg",
+            "backdrop_path": "https://image.tmdb.org/t/p/original/vPJwn9pp5f58CqdaXU3eOSLoJkl.jpg",
+            "title": "Rush Hour 2",
+            "average_rating": 10,
+            "release_date": "2005-10-19"
+        },
+        {
+            "id": 724330,
+            "poster_path": "https://image.tmdb.org/t/p/original/iv4hjp3Srnrm50wpFEtTn0k63Cj.jpg",
+            "backdrop_path": "https://image.tmdb.org/t/p/original/xDKuTzBVpJPqFc39H4hctrle87T.jpg",
+            "title": "Blue Streak",
+            "average_rating": 9,
+            "release_date": "1999-09-15"
+        },
+        {
+            "id": 1013880,
+            "poster_path": "https://image.tmdb.org/t/p/original/xtYr6LWiOvH6869kYzfLc3FUHLJ.jpg",
+            "backdrop_path": "https://image.tmdb.org/t/p/original/m5dA4JZsj78EBTa2D6imWOAebwB.jpg",
+            "title": "Scary Movie",
+            "average_rating": 8,
+            "release_date": "2000-11-15"
+        },
+        {
+            "id": 505604,
+            "poster_path": "https://image.tmdb.org/t/p/original/av9NBtmrIkBhePsQu3PRrce276s.jpg",
+            "backdrop_path": "https://image.tmdb.org/t/p/original/1bLZdOPOctwFF2IBONf6KczIppS.jpg",
+            "title": "Big Daddy",
+            "average_rating": 9.5,
+            "release_date": "1999-11-09"
+        }
+    ]
+}

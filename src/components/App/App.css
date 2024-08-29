@@ -93,3 +93,30 @@
   background-color: #01143a;
 }
 
+@media screen and (max-width: 576px) {
+  .main-page-cont {
+    background-color: #0163cb;
+  }
+
+  .movie {
+    img {
+      height: 100px;
+      width: 100px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .search-input {
+    width: 75%;
+  }
+
+  .input-search {
+    font-size: 15px;
+  }
+
+  .movie-list {
+    padding: 1% 1%;
+  }
+}

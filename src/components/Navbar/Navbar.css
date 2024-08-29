@@ -23,6 +23,10 @@
     }
 }
 
+.navbar img:hover {
+    transform: scale(1.1);
+}
+
 @keyframes logoPic {
     0% { transform: translate(0, 0) }
     25% { transform: translate(200px, 0) }
@@ -30,3 +34,16 @@
     75% { transform: translate(0, 0) }
     100% { transform: translate(0, 0) }
 }
+
+@media screen and (max-width: 576px) {
+
+    .navbar {
+        img {
+            width: 50px;
+        }
+        h1{
+            font-size: 15px;
+            padding-left: 40px;
+        }
+    }
+  }
