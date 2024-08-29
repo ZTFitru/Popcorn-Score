@@ -1,5 +1,6 @@
 import './Footer.css';
 import logo from '../../assets/popcornScoreLogo.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -16,7 +17,10 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='footer-icon'>
-                <img src={logo} alt='' />
+                <Link to={'/'}>
+                    <img src={logo} alt={`Website logo`} />
+                </Link>
+                
             </div>
         </div>
     )

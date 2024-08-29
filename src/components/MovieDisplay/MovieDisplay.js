@@ -24,10 +24,11 @@ const MovieDisplay = () => {
 
   return(
     <div className="trailer-cont">
+      {error && <p className='error-message'>{error}</p>}
       <div className="trailer">
       {apiMovie.map((movie) => (
         <div key={movie.key}>
-          <h3>{movie.type}</h3>
+          <h1>{movie.type}</h1>
           <iframe src={`https://www.youtube.com/embed/${movie.key}`} width={300} height={200} title={movie.type} allowFullScreen></iframe>
         </div>
       ))}

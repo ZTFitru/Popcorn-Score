@@ -1,6 +1,6 @@
 import "./RandomScroller.css";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+// import { Link, useParams } from "react-router-dom";
 import movieData from "../../Data/Data.js";
 
 function RandomScroller() {
@@ -86,20 +86,7 @@ function getRandomMember(array2) {
   );
 };
 
-{/* <div className='container'>
-        <div to={'/gryffindor'}>
-            <img src={gryffindorLogo} alt='gryffindor logo' className='gryffindor'/>
-        </div>
-        <div to={'/hufflepuff'}>
-            <img src={hufflepuffLogo} alt='hufflepuff logo' className='hufflepuff'/>    
-        </div>
-        <div to={'/ravenclaw'}>
-            <img src={ravenclawLogo} alt='ravenclaw logo' className='ravenclaw'/>
-        </div>
-        <div to={'/slytherin'}>
-            <img src={slytherinLogo} alt='slytherin logo' className='slytherin'/>
-        </div>
-    </div> */}
+
 
 /*
 .container {

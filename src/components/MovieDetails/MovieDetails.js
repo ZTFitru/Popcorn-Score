@@ -32,6 +32,7 @@ const MovieDetails = () => {
     <div className='movie-container' 
       style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original//${apiMovie.backdrop_path})`}}
     >
+      {error && <p className='error-message'>{error}</p>}
       <div className='movie-wrap'>
         <div className='movies'>
           <img src={apiMovie.poster_path} alt='' />

@@ -22,3 +22,17 @@
     width: 90px;
     border-radius: 50%;
 }
+
+@media screen and (max-width: 576px) {
+    .footer {
+        img {
+            width: 50px;
+        }
+        ul {
+            gap: 10px;
+        }
+        li {
+            font-size: 12px;
+        }
+    }
+}

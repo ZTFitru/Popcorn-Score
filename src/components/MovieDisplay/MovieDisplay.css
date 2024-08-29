@@ -37,3 +37,11 @@
         font-size: 15px;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .main-page-cont {
+        background-color: #0163cb;
+    }
+  
+    
+  }

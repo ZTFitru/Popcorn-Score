@@ -25,13 +25,13 @@
   .index-dot {
     border-radius: 50%;
     border: 0;
-    background-color: #bf5709;
-    color: #bf5709;
+    background-color: #fd6e00;
+    color: #000000;
     cursor: pointer;
   };
   .index-dot-inactive {
-    background-color: #904106;
-    color: #904106;
+    background-color: #f86d03;
+    color: #000000;
   };
 }
 

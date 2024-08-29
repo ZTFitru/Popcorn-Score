@@ -1,0 +1,20 @@
+{
+    "movie": {
+        "id": 436281,
+        "title": "Rush Hour 2",
+        "poster_path": "https://image.tmdb.org/t/p/original/aBQf2vMiCINeVC9v6BGVYKXurTh.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original/vPJwn9pp5f58CqdaXU3eOSLoJkl.jpg",
+        "release_date": "2005-10-19",
+        "overview": "It's vacation time for Carter as he finds himself alongside Lee in Hong Kong wishing for more excitement. While Carter wants to party and meet the ladies, Lee is out to track down a Triad gang lord who may be responsible for killing two men at the American Embassy.",
+        "genres": [
+            "Action",
+            "Comedy",
+            "Crime"
+        ],
+        "budget": 90000000,
+        "revenue": 347325802,
+        "runtime": 90,
+        "tagline": "Get ready for a second Rush!",
+        "average_rating": 10
+    }
+}
