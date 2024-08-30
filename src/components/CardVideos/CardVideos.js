@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import "./MovieDisplay.css";
+import "./CardVideos.css";
 import { useParams } from "react-router-dom";
 
-const MovieDisplay = () => {
+const CardVideos = () => {
   const { movie_id } = useParams()
   const [apiMovie, setApiMovie] = useState([])
   const [error, setError] = useState('')
@@ -38,4 +38,4 @@ const MovieDisplay = () => {
   );
 };
 
-export default MovieDisplay;
+export default CardVideos;

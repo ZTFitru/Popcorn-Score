@@ -3,28 +3,31 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RandomScroller from '../RandomScroller/RandomScroller';
 
-function Title() {
+function Title({apiMovies, error}) {
 
   const [movieInput, setMovieInput] = useState('');
   const [filteredMovies, setFilteredMovies] = useState([])
   const [userType, setUserType] = useState(false)
-  const [apiMovies, setApiMovies] = useState([])
-  const [error, setError] = useState('')
+  // const [apiMovies, setApiMovies] = useState([])
+  // const [error, setError] = useState('')
 
 
-  useEffect(() => {
-      const getMovies = async () => {
-          try {
-              const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies');
-              const data = await response.json();
-              setApiMovies(data.movies);
-          } catch (error) {
-              setError('Sorry but our server is down!')
-          }
-      }
-      getMovies();
+  // useEffect(() => {
+  //     const getMovies = async () => {
+  //         try {
+  //             const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies');
+  //             if(!response.ok) {
+  //               throw new Error('Bad Network')
+  //             }
+  //             const data = await response.json();
+  //             setApiMovies(data.movies);
+  //         } catch (error) {
+  //             setError('Sorry but our server is down!')
+  //         }
+  //     }
+  //     getMovies();
 
-  },[])
+  // },[])
 
   useEffect(() => {
       if(movieInput) {
@@ -32,10 +35,10 @@ function Title() {
               movie.title.toLowerCase().includes(movieInput.toLowerCase())
           )
           setFilteredMovies(result)
-          setUserType(true) // the movies would'nt come back
+          setUserType(true) 
       } else {
           setFilteredMovies(apiMovies)
-          setUserType(false) // just set to false
+          setUserType(false) 
       }
   }, [movieInput, apiMovies])
 
@@ -45,9 +48,13 @@ function Title() {
     <main className="App">
       {error && <p className='error-message'>{error}</p>}
       <section className="main-page-cont">
-        <RandomScroller movieList={ apiMovies }/>
+        <RandomScroller apiMovies={ apiMovies }/>
         <div className='search-input'>
-          <input type='text' className='input-search' placeholder='Search Movie...' value={movieInput} onChange={(event) => setMovieInput(event.target.value)}/>
+          <input 
+            type='text' 
+            className='input-search' 
+            placeholder='Search Movie...' 
+            value={movieInput} onChange={(event) => setMovieInput(event.target.value)}/>
         </div>
         <div className='movie-list'>
           {filteredMovies.length > 0 ? (
@@ -59,7 +66,7 @@ function Title() {
               </Link>
             ))
           ) : (
-            <p>We aint got the movie....try again</p>
+            <p className='no-movie-message'>We aint got the movie....try again</p>
           )}
         </div>
       </section>

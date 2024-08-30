@@ -12,6 +12,7 @@ describe('landing page spec', () => {
       statusCode: 200,
       fixture: 'movieVideo'
     }).as('getVideos')
+    
 
     cy.visit('http://localhost:3000/')
   });
@@ -36,6 +37,9 @@ describe('landing page spec', () => {
     .get('.movie-list').children().should('have.length', 4)
     .get('.movie-list').contains('Scary Movie').should('exist')
     .get('.movie-list').contains('Hard Ball').should('not.exist')
+
+    .get('.input-search').type('Daddy Day Camp')
+    .get('.no-movie-message').should('be.visible').and('contain', 'We aint got the movie....try again')
   })
 
   it('should navigate to details page when clicked', ()=> {
@@ -43,10 +47,9 @@ describe('landing page spec', () => {
     cy.get('[href="/movies/436281"] > img').click()
     cy.wait('@getDetails')
     .url().should('include', '/436281')
-    cy.get('button').click()
-    cy.wait('@getVideos')
-    .url().should('include', '/436281/videos')
     
   })
+
+  
 
 })

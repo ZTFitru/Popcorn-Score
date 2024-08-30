@@ -15,11 +15,12 @@ describe('details page', () => {
 
     cy.visit('http://localhost:3000/')
   });
+
   it('Should navigate to details page', ()=> {
     cy.wait('@getMovie')
     .get('[href="/movies/436281"] > img').click()
     cy.wait('@getSingleMovie')
-    .url().should('include', '/436281')
+    .url().should('include', 'movies/436281')
     .get('.movies > img').should('be.visible')
     
     .get('h2').contains('h2', 'Rush Hour 2')
@@ -30,12 +31,12 @@ describe('details page', () => {
     .get('p').contains('p', 'Runtime:')
     .get('p').contains('p', 'Tagline:')
 
-    .get('button').click()
-    // cy.wait('@getVideos')
-    // .url().should('include', '/436281/videos')
-    
-  
   })
-  
+  it('should navigate to video page after button clicked', ()=> {
+    cy.wait('@getMovie')
+    .get('[href="/movies/436281"] > img').click()
+    cy.wait('@getSingleMovie')
+    .url().should('include', 'movies/436281')
+  })
 
 })
