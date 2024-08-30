@@ -7,8 +7,9 @@
   flex-direction: column;
   justify-content: center;
   width: 99%;
-  height: 30%;
+  height: 35%;
   gap: 1%;
+  /* object-position: bottom; */
   .movie-index-dots {
     display: flex;
     justify-content: center;
@@ -34,18 +35,82 @@
   width: 99%;
   height: 99%;
   gap: 1%;
-  img {
-      width: 100%;
-      height: 100%;
-      object-fit:contain;
-      border-radius: 10px;
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      transition: all ease-in-out 0.5s;
-      cursor: pointer;
+  overflow-y: hidden;
+  position: relative;
+}
+
+/* background: linear-gradient(to bottom, 
+rgba(0, 0, 0, 0) 5%, 
+rgba(0, 0, 0, 0.75) 20%,
+rgba(0, 0, 0, 0.75) 80%,
+rgba(0, 0, 0, 0) 100%); */
+
+.random-movie-img {
+  aspect-ratio: 2 / 3;
+  height: 300%;
+  object-position: center -180px;
+  -webkit-mask-image: linear-gradient(to left, transparent, black 20%, black 80%, transparent);
+  cursor: pointer;
+  animation: 5s linear to-left-slide,
+    1s linear fade-in,
+    1s 4s linear fade-out;
+}
+
+.random-movie-title {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 8%;
+  left: 15%;
+  bottom: 3%;
+  margin: 0;
+  font-size: 200%;
+  font-weight: 1000;
+  background: linear-gradient(to right, 
+    rgba(0, 0, 0, 0.0) 5%, 
+    rgba(0, 0, 0, 0.75) 15%, 
+    rgba(0, 0, 0, 0.75) 85%, 
+    rgba(0, 0, 0, 0.0) 100%);
+    color: #fd6e00;
+    animation: 5s linear to-right-slide,
+    1.500s linear fade-in,
+    1.500s 3.5s linear fade-out;
+}
+
+@keyframes to-left-slide {
+  from {
+    transform: translatex(2%);
   }
-  a {
-      display: inline-block;
-      width: 10%;
-      height: 100%;
+  to {
+    transform: translatex(-2%);
+  }
+}
+
+@keyframes to-right-slide {
+  from {
+    transform: translatex(-5%);
+  }
+  to {
+    transform: translatex(5%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0
   }
 }

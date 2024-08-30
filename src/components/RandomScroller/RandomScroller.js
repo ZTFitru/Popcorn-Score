@@ -39,7 +39,7 @@ function RandomScroller({ apiMovies }) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % movieList.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [movieList])
@@ -89,11 +89,12 @@ function getRandomMember(array2) {
 
     <div className="outer-container">
         {movieList.map((movie, index) => (
-          <Link to={ `/movies${movie.id}` } 
+          <Link to={ `/movies/${movie.id}` } 
             key={index} 
             className={`container ${currentIndex === index ? 
             "currentIndex" : "currentIndex currentIndex-hidden"}`}>
-              <img src={movie.poster_path} alt={movie.title} />
+              <img src={movie.poster_path} alt={movie.title} className="random-movie-img"/>
+              <p className={"random-movie-title" + ' ' + movie.title}>{movie.title}</p>
           </Link>
         ))}
       <span className="movie-index-dots">
