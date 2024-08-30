@@ -1,12 +1,5 @@
-/* .random-carousel {
-  display: flex;
-  flex-direction: row;
-  height: 30%;
-  width: 99.9%;
-} */
-
 .currentIndex-hidden {
-  display: none;
+  display: none !important;
 }
 
 .outer-container {
@@ -26,12 +19,12 @@
     border-radius: 50%;
     border: 0;
     background-color: #fd6e00;
-    color: #000000;
+    color: #fd6e00;
     cursor: pointer;
   };
   .index-dot-inactive {
-    background-color: #f86d03;
-    color: #000000;
+    background-color: #904106;
+    color: #904106;
   };
 }
 
@@ -51,8 +44,8 @@
       cursor: pointer;
   }
   a {
-      /* display: inline-block;
+      display: inline-block;
       width: 10%;
-      height: 100%; */
+      height: 100%;
   }
 }

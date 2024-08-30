@@ -1,35 +1,69 @@
 import "./RandomScroller.css";
-import { useState } from "react";
-// import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import movieData from "../../Data/Data.js";
 
-function RandomScroller() {
+function RandomScroller({ apiMovies }) {
   // console.log(movieData)
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const randomList = []
+  const [movieList, setMovieList] = useState([])
   
-  function getRandomIndex(array) {
-    return Math.floor(Math.random() * array.length);
+  // const randomList = []
+  
+  // function getRandomIndex(array) {
+  //   return Math.floor(Math.random() * array.length);
+  // }
+  
+  
+  // function getRandomMovies(array) {
+  //   var index =  getRandomIndex(array);
+  //   return array[index];
+  // }
+    
+  
+  function getRandomMovies(array, movie) {
+    var index = [...array].sort(() => 0.5 - Math.random());
+    return index.slice(0, movie);
   }
   
-  function getRandomMember(array) {
-    var index = getRandomIndex(array);
-    return array[index];
-  }
-  
-  for(let i = 0; i < 5; i++) {
-    // console.log('Yo!')
-    let result = getRandomMember(movieData.movies);
-    // console.log(result, '<-- THERE')
-    if(randomList.includes(result)) {
-      let result2 = getRandomMember(movieData.movies);
-      randomList.push(result2)
-    } else {
-      randomList.push(result)
+  useEffect(() => {
+    if(apiMovies.length) {
+      setMovieList(getRandomMovies(apiMovies, 5));
     }
-  }
+  }, [apiMovies]);
+  
+  // console.log(movieList, '<-- HERE')
+  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % movieList.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [movieList])
+
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % randomList.length)
+  //   }, 3000);
+
+  //   return () => clearInterval(intervalId)
+  // }, [currentIndex]);
+  
+  // for(let i = 0; i < 5; i++) {
+  //   // console.log('Yo!')
+  //   let result = getRandomMovies(movieData.movies);
+  //   // console.log(result, '<-- THERE')
+  //   if(randomList.includes(result)) {
+  //     let result2 = getRandomMovies(movieData.movies);
+  //     randomList.push(result2)
+  //   } else {
+  //     randomList.push(result)
+  //   }
+  // }
 
   // console.log(randomList[0], '<-- HERE')
   
@@ -54,15 +88,20 @@ function getRandomMember(array2) {
     // </section>
 
     <div className="outer-container">
-      <div className="container">
-        {randomList.map((movie, index) => {
-          return (<img src={movie.poster_path} alt={movie.title} key={index} className={currentIndex === index ? "currentIndex" : "currentIndex currentIndex-hidden"} />)
-        })}
-      </div>
+        {movieList.map((movie, index) => (
+          <Link to={ `/movies${movie.id}` } 
+            key={index} 
+            className={`container ${currentIndex === index ? 
+            "currentIndex" : "currentIndex currentIndex-hidden"}`}>
+              <img src={movie.poster_path} alt={movie.title} />
+          </Link>
+        ))}
       <span className="movie-index-dots">
-        {randomList.map((_, index) => {
-          return <button key={index} onClick={() => setCurrentIndex(index)} className={currentIndex === index ? "index-dot" : "index-dot index-dot-inactive"} >*</button>
-        })}
+        {movieList.map((_, index) => (
+          <button key={index} onClick={() => setCurrentIndex(index)} 
+            className={currentIndex === index ? 
+            "index-dot" : "index-dot index-dot-inactive"}>*</button>
+        ))}
       </span>
     </div>
 
