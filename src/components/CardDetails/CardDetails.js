@@ -1,8 +1,8 @@
-import './MovieDetails.css'
+import './CardDetails.css'
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const MovieDetails = () => {
+const CardDetail = () => {
 
   const { id } = useParams()
   const [apiMovie, setApiMovie] = useState('')
@@ -29,9 +29,9 @@ const MovieDetails = () => {
   }
 
   return (
-    <div className='movie-container' 
-      style={{ backgroundImage: `url("https://image.tmdb.org/t/p/original//${apiMovie.backdrop_path})`}}
-    >
+    <div >
+      <div className='movie-container' 
+      style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original//${apiMovie.backdrop_path})`}}>
       {error && <p className='error-message'>{error}</p>}
       <div className='movie-wrap'>
         <div className='movies'>
@@ -48,8 +48,9 @@ const MovieDetails = () => {
           <button onClick={showVideo}>Trailers & Clips</button>
       </div>
       </div>
+      </div>
     </div>
   )
 }
 
-export default MovieDetails
+export default CardDetail
