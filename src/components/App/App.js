@@ -3,7 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CardVideos from '../CardVideos/CardVideos';
-import Title from '../Title/Title';
+import Title from '../Title/Title.js';
 import CardDetail from '../CardDetails/CardDetails';
 import ErrorCard from '../ErrorCard/ErrorCard';
 import { useState, useEffect } from 'react';
