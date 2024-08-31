@@ -20,8 +20,10 @@ const App = () => {
             if(!response.ok) {
               throw new Error('Bad Network')
             }
+            console.log(Error)
             const data = await response.json();
             setApiMovies(data.movies);
+            setError('')
         } catch (error) {
             setError('Sorry but our server is down!')
         }
@@ -34,10 +36,9 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
-        {/* <Route path='/movies:id' element={ <RandomScroller /> } /> */}
         <Route path='/' element={<Title apiMovies={apiMovies} error={error}/>}/>
-        <Route path='/movies/:id' element={<CardDetail apiMovies={apiMovies} error={error} />}/>
-        <Route path='/movies/:movie_id/videos' element={<CardVideos apiMovies={apiMovies} error={error}/>}/>
+        <Route path='/movies/:id' element={<CardDetail  />}/>
+        <Route path='/movies/:movie_id/videos' element={<CardVideos />}/>
         <Route path='*' element={<ErrorCard />} />
       </Routes>
       <Footer />

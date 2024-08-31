@@ -35,6 +35,8 @@
     100% { transform: translate(0, 0) }
 }
 
+/*----Smaller screen----*/
+
 @media screen and (max-width: 576px) {
 
     .navbar {
