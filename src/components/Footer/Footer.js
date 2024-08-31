@@ -17,10 +17,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='footer-icon'>
-                <Link to={'/'}>
-                    <img src={logo} alt={`Website logo`} />
-                </Link>
-                
+                <img src={logo} alt={`Website logo`} />
             </div>
         </div>
     )

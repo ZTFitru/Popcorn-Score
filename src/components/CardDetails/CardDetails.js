@@ -14,10 +14,13 @@ const CardDetail = () => {
     const getMovie = async () => {
         try {
             const response = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`);
+            if(!response.ok) {
+              throw new Error('Bad Network')
+            }
             const data = await response.json();
             setApiMovie(data.movie);
         } catch (error) {
-            setError('Sorry but our server is down!')
+            setError('We are sorry, there is something wrong with the movie id!')
         }
     }
     getMovie();
@@ -29,8 +32,7 @@ const CardDetail = () => {
   }
 
   return (
-    <div >
-      <div className='movie-container' 
+    <div className='movie-container' 
       style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original//${apiMovie.backdrop_path})`}}>
       {error && <p className='error-message'>{error}</p>}
       <div className='movie-wrap'>
@@ -48,7 +50,7 @@ const CardDetail = () => {
           <button onClick={showVideo}>Trailers & Clips</button>
       </div>
       </div>
-      </div>
+      
     </div>
   )
 }
