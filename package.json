@@ -40,5 +40,10 @@
   },
   "devDependencies": {
     "cypress": "^13.14.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DRIF7ER/popcorn-score.git"
+  },
+  "homepage": "http://DRIF7ER.github.io/popcorn-score"
 }
