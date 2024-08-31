@@ -7,13 +7,17 @@
   flex-direction: column;
   justify-content: center;
   width: 99%;
-  height: 35%;
+  height: 40%;
   gap: 1%;
+  background: linear-gradient(to bottom, 
+    black 60%, 
+    transparent 97%);
+  border-radius: 10px;
   .movie-index-dots {
     display: flex;
     justify-content: center;
     margin-top: .5%;
-    gap: .25%;
+    gap: 1%;
   };
   .index-dot {
     border-radius: 50%;
@@ -26,6 +30,9 @@
     background-color: #fd6e00;
     color: #ffffff;
   };
+  .not-visible {
+    opacity: 0;
+  }
 }
 
 .container {
@@ -36,13 +43,17 @@
   gap: 1%;
   overflow-y: hidden;
   position: relative;
+  -webkit-mask-image: linear-gradient(to left, 
+    transparent 10%, 
+    black 20%, 
+    black 80%, 
+    transparent 90%);
 }
 
 .random-movie-img {
-  aspect-ratio: 2 / 3;
-  height: 300%;
-  object-position: center -180px;
-  -webkit-mask-image: linear-gradient(to left, transparent, black 20%, black 80%, transparent);
+  aspect-ratio: 16 / 9;
+  height: 190%;
+  object-position: center -100px;
   cursor: pointer;
   animation: 5s linear to-left-slide,
     1s linear fade-in,

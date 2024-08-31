@@ -6,8 +6,8 @@ function RandomScroller({ apiMovies }) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [movieList, setMovieList] = useState([])
-  
+  const [movieList, setMovieList] = useState([]);
+    
   function getRandomMovies(array, movie) {
     var index = [...array].sort(() => 0.5 - Math.random());
     return index.slice(0, movie);
@@ -25,7 +25,7 @@ function RandomScroller({ apiMovies }) {
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [movieList])
+  }, [movieList]);
 
   return(
     <div className="outer-container">
@@ -34,7 +34,7 @@ function RandomScroller({ apiMovies }) {
             key={index} 
             className={`container ${currentIndex === index ? 
             "currentIndex" : "currentIndex currentIndex-hidden"}`}>
-              <img src={movie.poster_path} alt={`poster of ${movie.title}`} className="random-movie-img"/>
+              <img src={movie.backdrop_path} alt={`Poster of the movie ${movie.title}`} className="random-movie-img"/>
               <h2 className={"random-movie-title" + ' ' + movie.title}>{movie.title}</h2>
           </Link>
         ))}
@@ -42,7 +42,7 @@ function RandomScroller({ apiMovies }) {
         {movieList.map((_, index) => (
           <button key={index} onClick={() => setCurrentIndex(index)} 
             className={currentIndex === index ? 
-            "index-dot" : "index-dot index-dot-inactive"}>*</button>
+            "index-dot" : "index-dot index-dot-inactive"}><span className="not-visible">*</span></button>
         ))}
       </span>
     </div>
