@@ -31,6 +31,14 @@
             "title": "Big Daddy",
             "average_rating": 9.5,
             "release_date": "1999-11-09"
-        }
+        },
+        {
+          "id": 505605,
+          "poster_path": "https://image.tmdb.org/t/p/original/4axaWjt4z9KVBWplj7inBui5wd7.jpg",
+          "backdrop_path": "https://image.tmdb.org/t/p/original/5Uu0goIsKZP5BeMILfH3LoDpuZr.jpg",
+          "title": "Daddy Day Camp",
+          "average_rating": 5,
+          "release_date": "1999-11-09"
+      }
     ]
 }

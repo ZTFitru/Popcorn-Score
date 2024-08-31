@@ -30,16 +30,15 @@ function Title({apiMovies, error}) {
       <section className="main-page-cont">
         <RandomScroller apiMovies={ apiMovies }/>
         <div className='search-input'>
-          <form>
-            <label className='search-movie' >
-              <input htmlFor='searchBar'
-                type='text' 
-                id='searchBar'
-                className='input-search' 
-                placeholder='Search Movie...' 
-                value={movieInput} onChange={(event) => setMovieInput(event.target.value)}/>
-            </label>
-          </form>
+          <label HTMLFor='input-search'>
+            <p  className='visually-hidden'>Search Bar</p>
+            <input 
+              type='text' 
+              className='input-search'
+              title='search-bar'
+              placeholder='Search Movie...' 
+              value={movieInput} onChange={(event) => setMovieInput(event.target.value)}/>
+          </label>
         </div>
         <div className='movie-list'>
           {filteredMovies.length > 0 ? (
