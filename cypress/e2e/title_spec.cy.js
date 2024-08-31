@@ -38,25 +38,24 @@ describe('landing page spec', () => {
 
   it('should display all movies and have a search bar that filters movies', ()=> {
     cy.wait('@getMovies')
-    //change this to 5
     .get('.movie-list').children().should('have.length', 5)
     .get('.movie-list').contains('Rush Hour 2').should('exist')
     .get('.movie-list').contains('Blue Streak').should('exist')
     .get('.movie-list').contains('Scary Movie').should('exist')
     .get('.movie-list').contains('Big Daddy').should('exist')
     .get('.movie-list').contains('Daddy Day Camp').should('exist')
-    // add one more for 'Daddy Day Camp'
+
     .get('.input-search').type('Rush Hour 2')
     .get('.movie-list').children().should('have.length', 1)
     .get('.movie-list').contains('Rush Hour 2').should('exist')
     .get('.movie-list').contains('Batman').should('not.exist')
     .get('.input-search').clear()
-    // change this to 5
+
     .get('.movie-list').children().should('have.length', 5)
     .get('.movie-list').contains('Scary Movie').should('exist')
     .get('.movie-list').contains('Hard Ball').should('not.exist')
     .get('.input-search').type('Superman')
-    .get('.no-movie-message').should('be.visible').and('contain', 'We aint got the movie....try again')
+    .get('.no-movie-message').should('be.visible').and('contain', "Sorry, can't find that movie.")
   });
 
   it('should navigate to details page when clicked', ()=> {

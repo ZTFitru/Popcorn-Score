@@ -35,7 +35,7 @@ function RandomScroller({ apiMovies }) {
             className={`container ${currentIndex === index ? 
             "currentIndex" : "currentIndex currentIndex-hidden"}`}>
               <img src={movie.backdrop_path} alt={`Poster of the movie ${movie.title}`} className="random-movie-img"/>
-              <h2 className={"random-movie-title" + ' ' + movie.title}>{movie.title}</h2>
+              <h2 className={`random-movie-title ${movie.title}`}>{movie.title}</h2>
           </Link>
         ))}
       <span className="movie-index-dots">

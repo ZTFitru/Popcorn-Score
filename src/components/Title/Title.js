@@ -1,4 +1,4 @@
-import './Title.css'
+import './Title.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RandomScroller from '../RandomScroller/RandomScroller';
@@ -8,7 +8,6 @@ function Title({apiMovies, error}) {
 
   const [movieInput, setMovieInput] = useState('');
   const [filteredMovies, setFilteredMovies] = useState([])
-  const [userType, setUserType] = useState(false)
   
 
   useEffect(() => {
@@ -17,10 +16,8 @@ function Title({apiMovies, error}) {
               movie.title.toLowerCase().includes(movieInput.toLowerCase())
           )
           setFilteredMovies(result)
-          setUserType(true) 
       } else {
           setFilteredMovies(apiMovies)
-          setUserType(false) 
       }
   }, [movieInput, apiMovies])
 
@@ -50,7 +47,7 @@ function Title({apiMovies, error}) {
               </Link>
             ))
           ) : (
-            <p className='no-movie-message'>We aint got the movie....try again</p>
+            <p className='no-movie-message'>Sorry, can't find that movie.</p>
           )}
         </div>
       </section>
