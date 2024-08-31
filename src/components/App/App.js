@@ -25,7 +25,7 @@ const App = () => {
             setApiMovies(data.movies);
             setError('')
         } catch (error) {
-            setError('Sorry but our server is down!')
+            setError('Sorry something went wrong, please try again!')
         }
     }
     getMovies();
@@ -45,6 +45,6 @@ const App = () => {
     </Router>
   )
 
-}
+};
 
 export default App;
