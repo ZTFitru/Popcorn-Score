@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Warning.png" alt="Warning" width="25" height="25" /> Overview:
 For our first paired project in Mod3 at Turing, we were assigned to create something like `Rotten Tomatoes`. An application that would allow the user to see all the movies when they visit the page. It allows them to search for a movie, they can click on the poster of the movie to be directed to the details page. The details page allowed the user to see the run time of a movie, the budget, an overview, the revenue, and the genre. They also had the ability to see clips and videos from Youtube. 
 
-## Visit Our Website: 
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Airplane%20Departure.png" alt="Airplane Departure" width="25" height="25" /> Visit Our Website:
 [Popcorn Score](https://drif7er.github.io/popcorn-score/#/)
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Movie%20Camera.png" alt="Movie Camera" width="25" height="25" /> Preview of App:
