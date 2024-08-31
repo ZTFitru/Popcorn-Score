@@ -18,7 +18,7 @@ describe('template spec', () => {
 
   it('Should navigate from details page to video page', ()=> {
     cy.wait('@getMovies')
-    cy.get('.movie-list > [href="/movies/436281"] > img').click()
+    cy.get('.movie-list > [href="#/movies/436281"] > img').click()
     cy.url().should('include', 'movies/436281')
 
     cy.get('button').click()
@@ -29,7 +29,7 @@ describe('template spec', () => {
 
   it('should check if iframe is displayed', ()=> {
     cy.wait('@getMovies')
-    .get('.movie-list > [href="/movies/436281"] > img').click()
+    .get('.movie-list > [href="#/movies/436281"] > img').click()
     cy.wait('@getSingleMovie')
     .url().should('include', 'movies/436281')
     cy.get('button').click()

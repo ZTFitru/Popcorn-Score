@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CardVideos from '../CardVideos/CardVideos';
 import Title from '../Title/Title.js';
 import CardDetail from '../CardDetails/CardDetails';
@@ -33,7 +33,7 @@ const App = () => {
 },[])
 
   return (
-    <Router>
+    <main className='App'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Title apiMovies={apiMovies} error={error}/>}/>
@@ -42,7 +42,7 @@ const App = () => {
         <Route path='*' element={<ErrorCard />} />
       </Routes>
       <Footer />
-    </Router>
+    </main>
   )
 
 };

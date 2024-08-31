@@ -59,7 +59,8 @@ describe('landing page spec', () => {
   });
 
   it('should navigate to details page when clicked', ()=> {
-    cy.get('.movie-list > [href="/movies/436281"] > img').click()
+    cy.wait('@getMovies')
+    cy.get('.movie-list > [href="#/movies/436281"] > img').click()
     cy.wait('@getDetails')
     .url().should('include', '/436281')
   });
