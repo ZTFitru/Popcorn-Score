@@ -18,7 +18,7 @@ describe('details page', () => {
 
   it('Should navigate to details page', ()=> {
     cy.wait('@getMovie')
-    .get('.movie-list > [href="/movies/436281"] > img').click()
+    cy.get('.movie-list > [href="#/movies/436281"] > img').click()
     cy.wait('@getSingleMovie')
     .url().should('include', 'movies/436281')
     .get('.movies > img').should('be.visible')
@@ -31,10 +31,10 @@ describe('details page', () => {
     .get('p').contains('p', 'Runtime:')
     .get('p').contains('p', 'Tagline:')
 
-  })
+  });
   it('should navigate to video page after button clicked', ()=> {
     cy.wait('@getMovie')
-    .get('.movie-list > [href="/movies/436281"] > img').click()
+    .get('.movie-list > [href="#/movies/436281"] > img').click()
     cy.wait('@getSingleMovie')
     .url().should('include', 'movies/436281')
   })
